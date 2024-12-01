@@ -8,7 +8,7 @@ import * as winston from 'winston';
 		WinstonModule.forRoot({
 			transports: [
 				new winston.transports.File({
-					filename: 'report.log',
+					filename: 'logs/report.log',
 					level: 'info',
 					format: winston.format.combine(
 						winston.format.timestamp(),

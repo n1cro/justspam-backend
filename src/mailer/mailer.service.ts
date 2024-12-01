@@ -30,8 +30,7 @@ export class MailerService {
 			text: ''
 		};
 
-		const info = await transporter.sendMail(mailOptions);
-		console.log(info);
+		await transporter.sendMail(mailOptions);
 	}
 
 	extractFromMailTo(mailTo: string): {

@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  justspam-app:
+    image: justspam-backend:1.0.0
+    container_name: justspam-backend
+    restart: always
+    build:
+      context: .
+      target: runner
+    privileged: true
+    network_mode: 'host'
+    ports:
+      - '80:${PORT}'
+    volumes:
+      - ./logs:/app/logs
+    env_file: .env
