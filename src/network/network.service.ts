@@ -15,13 +15,13 @@ export class NetworkService {
 
 	addIP(ipAddress: string): Promise<void> {
 		const { interfaceName, cidrSize } = this.options;
-		const command = `sudo ip addr add ${ipAddress}/${cidrSize} dev ${interfaceName}`;
+		const command = `ip addr add ${ipAddress}/${cidrSize} dev ${interfaceName}`;
 		return this.executeCommand(command);
 	}
 
 	deleteIP(ipAddress: string): Promise<void> {
 		const { interfaceName, cidrSize } = this.options;
-		const command = `sudo ip addr del ${ipAddress}/${cidrSize} dev ${interfaceName}`;
+		const command = `ip addr del ${ipAddress}/${cidrSize} dev ${interfaceName}`;
 		return this.executeCommand(command);
 	}
 
