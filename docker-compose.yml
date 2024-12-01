@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   justspam-app:
     image: justspam-backend:1.0.0
